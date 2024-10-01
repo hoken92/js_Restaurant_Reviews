@@ -13,26 +13,55 @@
       <form action="#" id="review-form">
         <label for="name"
           >Full Name:
-          <input type="text" name="name" id="name" />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Your name"
+            autofocus
+          />
         </label>
         <label for="restaurant-name"
           >Resturant Name:
-          <input type="text" name="restaurant-name" id="restaurant-name"
+          <input
+            type="text"
+            name="restaurant-name"
+            id="restaurant-name"
+            placeholder="Pizza Planet"
         /></label>
         <label for="rating"
           >Rating:
-          <input type="number" name="rating" id="rating" />
+          <input
+            type="number"
+            name="rating"
+            id="rating"
+            min="1"
+            max="5"
+            placeholder="1-5"
+            required
+          />
         </label>
         <label for="visit-date"
           >Date Visited:
           <input type="date" name="visit-date" id="visit-date" />
         </label>
-        <label for="review-info"
-          >Resturant Review:
-          <textarea name="review-info" id="review-info"></textarea>
-        </label>
         <input type="submit" value="Submit" id="submit-btn" />
       </form>
+      <div>
+        <label for="review-info"
+          >Resturant Review:
+          <textarea
+            name="review-info"
+            id="review-info"
+            rows="12"
+            cols="100"
+            minlength="50"
+            maxlength="500"
+            form="review-form"
+            placeholder="Leave your review here..."
+          ></textarea>
+        </label>
+      </div>
     </div>
     <div id="review-container">
       <h1>Your Reviews:</h1>
