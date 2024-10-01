@@ -12,15 +12,30 @@ const submitBtn = formEl.lastElementChild;
 // Reviews
 const reviewDiv = document.querySelector(".review-container");
 
-// formEl.addEventListener("submit");
+// Runs the functions when a user submits the form
+formEl.addEventListener("submit", function (evt) {
+  evt.preventDefault();
+  validateForm(evt);
+});
 
-function validateForm() {}
-
-function validateName() {
-  if (name.value === "") {
-    console.log("Please provide a name");
-    name.focus();
+// Call the validation on all fields in the form
+function validateForm(evt) {
+  // run Validate Name
+  const nameVal = validateName();
+  if (nameVal === false) {
+    evt.preventDefault();
     return false;
   }
-  return name.value;
+
+  console.log(nameVal);
+}
+
+// Define Validate functions
+function validateName() {
+  if (nameEl.value === "") {
+    console.log("Please provide a name");
+    nameEl.focus();
+    return false;
+  }
+  return nameEl.value;
 }
