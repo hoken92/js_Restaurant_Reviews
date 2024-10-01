@@ -24,7 +24,7 @@ h1 {
 }
 
 #form-container {
-  margin: 5px auto;
+  margin: 15px auto;
   padding: 25px;
   width: 80vw;
   height: 40vh;
@@ -39,7 +39,7 @@ h1 {
 }
 
 #review-container {
-  margin: 5px auto;
+  margin: 10px auto;
   padding: 25px;
   width: 80vw;
   height: 60vh;
