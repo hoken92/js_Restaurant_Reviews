@@ -23,13 +23,24 @@ h1 {
   padding: 10px;
 }
 
+#alertMessage {
+  width: 200px;
+  height: 50px;
+  background-color: var(--text-color);
+  color: var(--textheader-color);
+  position: relative;
+  left: 30rem;
+  display: none;
+}
+
 #form-container {
   margin: 15px auto;
   padding: 25px;
   width: 80%;
-  height: 40%;
+  height: 45%;
   position: relative;
   display: flex;
+  justify-content: center;
   flex-direction: column;
   border: 1px solid black;
 }
@@ -39,7 +50,7 @@ h1 {
   flex-direction: column;
   flex-wrap: wrap;
   width: 30%;
-  height: 200px;
+  height: 250px;
 }
 #review-form input {
   margin: 5px;
@@ -56,6 +67,11 @@ h1 {
   flex-direction: column;
   border: 1px solid black;
   position: relative;
+}
+
+#review-form label:nth-child(5) {
+  position: relative;
+  left: 10rem;
 }
 
 .review {

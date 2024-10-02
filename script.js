@@ -8,6 +8,7 @@ const ratingEl = document.getElementById("rating");
 const dateEl = document.getElementById("visit-date");
 const reviewInfoEl = document.getElementById("review-info");
 const submitBtn = formEl.lastElementChild;
+const messageBox = document.getElementById("alertMessage");
 
 // Reviews
 const reviewsContainer = document.querySelector("#review-container");
@@ -20,6 +21,7 @@ formEl.addEventListener("submit", function (evt) {
   //Runs the validate form function
   const reviewSubmission = validateForm(evt);
 
+  // If reviewSubmission contains a false value, focus on the empty input field and throw a message
   if (reviewSubmission === false) {
     return;
   } else {
@@ -57,7 +59,7 @@ formEl.addEventListener("submit", function (evt) {
     newReviewInfo.classList.add("review-text");
     newReviewInfo.textContent = reviewString;
 
-    formEl.reset();
+    // formEl.reset();
   }
 });
 
@@ -100,7 +102,7 @@ function validateForm(evt) {
     date_visited: dateVal,
     review: reviewVal,
   };
-  //   console.log(reviewInfo);
+
   // Inserts the reviewInfo object inside review array
   //   review.push(reviewInfo);
   return reviewInfo;
@@ -109,7 +111,7 @@ function validateForm(evt) {
 // Define Validate functions
 function validateName() {
   if (nameEl.value === "") {
-    console.log("Please provide a name");
+    displayMessage("Please provide a name");
     nameEl.focus();
     return false;
   }
@@ -118,7 +120,7 @@ function validateName() {
 
 function validateRestaurant() {
   if (restNameEl.value === "") {
-    console.log("Please provide a resturant name");
+    displayMessage("Please provide a resturant name");
     restNameEl.focus();
     return false;
   }
@@ -129,11 +131,22 @@ function validateDate() {
   const todaysDate = new Date().toISOString().split("T", 1);
 
   if (dateEl.value > todaysDate) {
-    console.log("Please enter a valid date.");
+    displayMessage("Please enter a valid date.");
     return false;
   } else if (dateEl.value === "") {
-    console.log("Please enter a date.");
+    displayMessage("Please enter a date.");
     return false;
   }
   return dateEl.value;
+}
+
+function displayMessage(message) {
+  messageBox.style.display = "flex";
+  messageBox.style.textAlign = "center";
+  messageBox.style.alignItems = "center";
+  messageBox.style.justifyContent = "center";
+  messageBox.textContent = message;
+  setTimeout(() => {
+    messageBox.style.display = "none";
+  }, 2000);
 }
