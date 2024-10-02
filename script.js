@@ -18,6 +18,17 @@ formEl.addEventListener("submit", function (evt) {
   const reviewSubmission = validateForm(evt);
   console.log(reviewSubmission);
 
+  const reviewDiv = document.createElement("div");
+  reviewDiv.classList.add("review");
+
+  // 1. Grab the p tag and set the
+  // Place the object key/values into a variable into the p tag, like a temp literal
+  const str = reviewSubmission.name + reviewSubmission.Restaurant_name;
+
+  console.log(str);
+  for (const key in reviewSubmission) {
+    console.log(key, key.name);
+  }
   //   formEl.reset();
 });
 
