@@ -7,7 +7,7 @@
 
 :root {
   --body-color: #546a7b;
-  --textheader-color: #393d3f;
+  --textheader-color: #2d2f30;
   --text-color: #fdfdff;
   --button-color: #62929e;
   --review-color: #62929e;
@@ -43,6 +43,8 @@ h1 {
   justify-content: center;
   flex-direction: column;
   border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 10px;
 }
 
 #review-form {
@@ -67,11 +69,22 @@ h1 {
   flex-direction: column;
   border: 1px solid black;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  border-radius: 10px;
+}
+
+#review-container h1 {
+  position: relative;
+  left: 30px;
 }
 
 #review-form label:nth-child(5) {
   position: relative;
   left: 10rem;
+}
+
+.review span {
+  font-size: 15px;
 }
 
 .review {
@@ -82,6 +95,15 @@ h1 {
   margin: 5px auto;
   border: 1px solid black;
   background-color: var(--review-color);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.review:hover {
+  background-color: #152742;
+}
+
+.active {
+  background-color: #152742;
 }
 
 .review-header {
@@ -93,6 +115,7 @@ h1 {
 .date-stamp {
   float: right;
 }
+
 .review-text {
   padding: 10px;
 }

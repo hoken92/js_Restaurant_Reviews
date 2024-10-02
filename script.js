@@ -45,11 +45,13 @@ formEl.addEventListener("submit", function (evt) {
     newReviewHeader.classList.add("review-header");
     newReviewHeader.textContent = reviewerString;
 
-    // Creates a date stamp and appends into the above <p> element
+    //Creates a document fragment
+    // Creates a date stamp and appends into the fragment
+    // Append the fragment to the p element above
     // Set the date-stamp class
-    const timeStamp = newReviewHeader.appendChild(
-      document.createElement("span")
-    );
+    const newFrag = new DocumentFragment();
+    const timeStamp = newFrag.appendChild(document.createElement("span"));
+    newReviewHeader.appendChild(newFrag);
     timeStamp.classList.add("date-stamp");
     timeStamp.textContent = new Date().toLocaleString();
 
@@ -62,6 +64,9 @@ formEl.addEventListener("submit", function (evt) {
     // formEl.reset();
   }
 });
+
+// Event listener for Review container to set an active class to a selected review
+reviewsContainer.addEventListener("click", setActiveClass(evt));
 
 // cache objects into the below array
 // Each review will be iterated to be shown on the page
@@ -107,6 +112,9 @@ function validateForm(evt) {
   //   review.push(reviewInfo);
   return reviewInfo;
 }
+
+// Function to set the clicked div to a class of "active"
+function setActiveClass(evt) {}
 
 // Define Validate functions
 function validateName() {
