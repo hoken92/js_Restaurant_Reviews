@@ -11,7 +11,7 @@ const submitBtn = formEl.lastElementChild;
 const messageBox = document.getElementById("alertMessage");
 
 // Reviews
-const reviewsContainer = document.querySelector("#review-container");
+const reviewsContainer = document.querySelector("#info-container");
 
 // Runs the functions when a user submits the form
 formEl.addEventListener("submit", function (evt) {
@@ -66,7 +66,9 @@ formEl.addEventListener("submit", function (evt) {
 });
 
 // Event listener for Review container to set an active class to a selected review
-reviewsContainer.addEventListener("click", setActiveClass(evt));
+reviewsContainer.addEventListener("click", function (evt) {
+  setActiveClass(evt);
+});
 
 // cache objects into the below array
 // Each review will be iterated to be shown on the page
@@ -114,7 +116,22 @@ function validateForm(evt) {
 }
 
 // Function to set the clicked div to a class of "active"
-function setActiveClass(evt) {}
+function setActiveClass(evt) {
+  const activeDiv = evt.target.parentNode;
+
+  if (activeDiv.localName === "div" && activeDiv.classList.contains("review")) {
+    if (activeDiv.classList.contains("active")) {
+      return activeDiv.classList.remove("active");
+    } else {
+      for (const child of reviewsContainer.children) {
+        child.classList.remove("active");
+      }
+      return activeDiv.classList.add("active");
+    }
+  } else {
+    return;
+  }
+}
 
 // Define Validate functions
 function validateName() {
@@ -148,6 +165,7 @@ function validateDate() {
   return dateEl.value;
 }
 
+// Uses window.setTimeOut method for alert box to disappear
 function displayMessage(message) {
   messageBox.style.display = "flex";
   messageBox.style.textAlign = "center";
