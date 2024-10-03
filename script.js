@@ -14,6 +14,7 @@ const messageBox = document.getElementById("alertMessage");
 const reviewsContainer = document.querySelector("#info-container");
 
 // Runs the functions when a user submits the form
+// Form will reset once form is sucessfully submitted
 formEl.addEventListener("submit", function (evt) {
   // Prevents form from defaulting
   evt.preventDefault();
@@ -61,7 +62,7 @@ formEl.addEventListener("submit", function (evt) {
     newReviewInfo.classList.add("review-text");
     newReviewInfo.textContent = reviewString;
 
-    // formEl.reset();
+    formEl.reset();
   }
 });
 
