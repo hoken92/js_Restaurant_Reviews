@@ -13,6 +13,7 @@ You get to leave an amazing review for your favorite restaurants with this webpa
    2. Full name, Restaurant name cannot be empty
    3. Date Visited needs to be a current or past date. Any future dates are invalid
       - If 2 or 3 is empty, it will display an error box with the message and focus on the failed input field
+   4. The form will reset when the form is successfully submitted.
 2. There are two event listeners in this webpage
    1. When a user submits a review with all the fields filled. It will capture all of the input values and be captured inside a object with key, values.
       - Elements will be then created and the object key/value pairs will then be inserted into their respected elements as their textContent and appended into the info-container div.
