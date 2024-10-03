@@ -32,8 +32,8 @@ h1 {
   background-color: rgb(205, 30, 30);
   color: var(--text-color);
   position: absolute;
-  left: 30rem;
-  top: 3rem;
+  left: 680px;
+  top: 15px;
   display: none;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -43,10 +43,11 @@ h1 {
   margin: 15px auto;
   padding: 25px;
   width: 80%;
-  height: 350px;
+  height: 380px;
   position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
   border: 1px solid black;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
@@ -57,13 +58,15 @@ h1 {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  width: 30%;
+  justify-content: center;
+  align-content: space-between;
+  width: 80%;
   height: 250px;
 }
 
 #review-form label {
   position: relative;
-  left: 1rem;
+  left: 10rem;
 }
 
 #review-form input {
@@ -76,7 +79,7 @@ h1 {
   padding: 15px;
   border-radius: 5px;
   position: relative;
-  top: 13.5rem;
+  top: 8rem;
   right: 25rem;
   background-color: var(--button-color);
   color: var(--text-color);
