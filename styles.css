@@ -14,6 +14,8 @@
 }
 
 body {
+  margin-top: 75px;
+  margin-bottom: 50px;
   background-color: var(--body-color);
   color: var(--text-color);
 }
@@ -40,7 +42,7 @@ h1 {
   margin: 15px auto;
   padding: 25px;
   width: 80%;
-  height: 45%;
+  height: 350px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -57,9 +59,35 @@ h1 {
   width: 30%;
   height: 250px;
 }
+
+#review-form label {
+  position: relative;
+  left: 1rem;
+}
+
 #review-form input {
   margin: 5px;
   padding: 5px;
+}
+
+#review-form input[type="submit"] {
+  width: 100px;
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  top: 13.5rem;
+  right: 25rem;
+  background-color: var(--button-color);
+  color: var(--text-color);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+#review-form input[type="submit"]:hover {
+  background-color: #152742;
+}
+
+#review-form input[type="submit"]:active {
+  background-color: var(--button-color);
 }
 
 #info-container {
